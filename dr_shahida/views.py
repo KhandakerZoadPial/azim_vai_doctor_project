@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from dr_shahida.models import BlogPost
-
+from dr_shahida.forms import ContactForm
 def index(request):
     blog_posts = BlogPost.objects.all()
     diction = {'blog_posts':blog_posts[0:3]}

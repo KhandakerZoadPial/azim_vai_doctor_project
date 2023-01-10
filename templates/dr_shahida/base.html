@@ -31,42 +31,8 @@
 </head>
 
 <body>
-    <!-- Topbar Start -->
-    <div class="container-fluid py-2 border-bottom d-none d-lg-block">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6 text-center text-lg-start mb-2 mb-lg-0">
-                    <div class="d-inline-flex align-items-center">
-                        <a class="text-decoration-none text-body pe-3" href=""><i class="bi bi-telephone me-2"></i>+012 345 6789</a>
-                        <span class="text-body">|</span>
-                        <a class="text-decoration-none text-body px-3" href=""><i class="bi bi-envelope me-2"></i>info@example.com</a>
-                    </div>
-                </div>
-                <div class="col-md-6 text-center text-lg-end">
-                    <div class="d-inline-flex align-items-center">
-                        <a class="text-body px-2" href="">
-                            <i class="fab fa-facebook-f"></i>
-                        </a>
-                        <a class="text-body px-2" href="">
-                            <i class="fab fa-twitter"></i>
-                        </a>
-                        <a class="text-body px-2" href="">
-                            <i class="fab fa-linkedin-in"></i>
-                        </a>
-                        <a class="text-body px-2" href="">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                        <a class="text-body ps-2" href="">
-                            <i class="fab fa-youtube"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Topbar End -->
-
-
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v15.0" nonce="EzPa1h4D"></script>
     <!-- Navbar Start -->
     <div class="container-fluid sticky-top bg-white shadow-sm">
         <div class="container">
@@ -80,10 +46,11 @@
                 <div class="collapse navbar-collapse" id="navbarCollapse">
                     <div class="navbar-nav ms-auto py-0">
                         <a href="{% url 'index' %}" class="nav-item nav-link active">Home</a>
-                        <a href="{% url 'about' %}" class="nav-item nav-link">About</a>
-                        <a href="{% url 'service' %}" class="nav-item nav-link">Service</a>
-                        <a href="{% url 'blog' %}" class="nav-item nav-link">Blog</a>
-                        <a href="{% url 'contact' %}" class="nav-item nav-link">Contact</a>
+                        <a href="http://127.0.0.1:8000/#appointment" class="nav-item nav-link">Appintment</a>
+                        <a href="http://127.0.0.1:8000/#about" class="nav-item nav-link">About</a>
+                        <a href="http://127.0.0.1:8000/#services" class="nav-item nav-link">Service</a>
+                        <a href="http://127.0.0.1:8000/#blog" class="nav-item nav-link">Blog</a>
+                       
                         
                     </div>
                 </div>
@@ -95,7 +62,9 @@
     {% block content %}
 
     {% endblock %}
+    {% block footer %}
 
+    {% endblock %}
 
 
     <!-- JavaScript Libraries -->
