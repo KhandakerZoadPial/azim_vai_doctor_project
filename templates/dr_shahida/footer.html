@@ -1,13 +1,14 @@
+{% load i18n %}   
    <!-- Footer Start -->
    <div class="container-fluid bg-dark text-light mt-5 py-5">
     <div class="container py-5">
         <div class="row g-5">
             <div class="col-lg-4 col-md-6 col-sm-12">
-                <h4 class="d-inline-block text-primary text-uppercase border-bottom border-5 border-secondary mb-4">Get In Touch</h4>
-                <p class="mb-4">Lab Aid, Barishal - 8200</p>
-                <p class="mb-2"><i class="fa fa-map-marker-alt text-primary me-3"></i>K Jahan Center, House-106, Sadar Road, Barisal - 8200</p>
-                <p class="mb-2"><i class="fa fa-envelope text-primary me-3"></i>info@example.com</p>
-                <p class="mb-0"><i class="fa fa-phone-alt text-primary me-3"></i>+012 345 67890</p>
+                <h4 class="d-inline-block text-primary text-uppercase border-bottom border-5 border-secondary mb-4">{{footer_title}}</h4>
+                <p class="mb-4">{{footer_tagline}}</p>
+                <p class="mb-2"><i class="fa fa-map-marker-alt text-primary me-3"></i>{{footer_address}}</p>
+                <p class="mb-2"><i class="fa fa-envelope text-primary me-3"></i>{{footer_email}}</p>
+                <p class="mb-0"><i class="fa fa-phone-alt text-primary me-3"></i>{{footer_phone}}</p>
             </div>
             <div class="col-lg-4 col-md-6 col-sm-12">
                 <h4 class="d-inline-block text-primary text-uppercase border-bottom border-5 border-secondary mb-4">Quick Links</h4>
@@ -15,7 +16,7 @@
                     <a class="text-light mb-2" href="{% url 'index' %}"><i class="fa fa-angle-right me-2"></i>Home</a>
                     <a class="text-light mb-2" href="#about"><i class="fa fa-angle-right me-2"></i>About</a>
                     <a class="text-light mb-2" href="{% url 'testimonial' %}"><i class="fa fa-angle-right me-2"></i>Testimonial</a>
-                    <a class="text-light mb-2" href="#blog"><i class="fa fa-angle-right me-2"></i>Latest Blog</a>
+                    <a class="text-light mb-2" href="#blog"><i class="fa fa-angle-right me-2"></i>Latest Blogs</a>
                     <a class="text-light" href="#appointment"><i class="fa fa-angle-right me-2"></i>Appointment</a>
                 </div>
             </div>
@@ -25,8 +26,7 @@
                 <div class="d-flex">
                     
                     <a class="btn btn-lg btn-primary btn-lg-square rounded-circle me-2" href="https://www.facebook.com/Dr.ShahidaBegumMinu/"><i class="fab fa-facebook-f"></i></a>
-                    <a class="btn btn-lg btn-primary btn-lg-square rounded-circle me-2" href="#"><i class="fab fa-linkedin-in"></i></a>
-                    <a class="btn btn-lg btn-primary btn-lg-square rounded-circle" href="#"><i class="fab fa-instagram"></i></a>
+                    <a class="btn btn-lg btn-primary btn-lg-square rounded-circle" href="https://www.youtube.com/@onlineteachingofgynecology3449"><i class="fab fa-youtube"></i></a>
                 </div>
             </div>
         </div>

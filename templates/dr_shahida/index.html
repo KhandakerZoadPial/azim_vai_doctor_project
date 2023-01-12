@@ -1,4 +1,5 @@
 {% extends 'dr_shahida/base.html' %}
+{% load i18n %}
 {% load static %}
 {% block content %}
 
@@ -7,8 +8,8 @@
         <div class="container py-5">
             <div class="row justify-content-start">
                 <div class="col-lg-8 text-center text-lg-start">
-                    <h5 class="d-inline-block text-primary text-uppercase border-bottom border-5" style="border-color: rgba(256, 256, 256, .3) !important;">Welcome To Medinova</h5>
-                    <h1 class="display-1 text-white mb-md-4">Best Womens Healthcare In Your City</h1>
+                    <h5 class="d-inline-block text-primary text-uppercase border-bottom border-5" style="border-color: rgba(256, 256, 256, .3) !important;">{{chamber_name}}</h5>
+                    <h1 class="display-1 text-white mb-md-4">{{doctor_tagline}}</h1>
                     <div class="pt-2">
                         <a href="#appointment" class="btn btn-light rounded-pill py-md-3 px-md-5 mx-2">Appointment</a>
                         <a href="#services" class="btn btn-outline-light rounded-pill py-md-3 px-md-5 mx-2">Services</a>
@@ -23,8 +24,8 @@
 <div class="container-fluid py-5" id="blog">
     <div class="container">
         <div class="text-center mx-auto mb-5" style="max-width: 500px;">
-            <h5 class="d-inline-block text-primary text-uppercase border-bottom border-5">Blog Post</h5>
-            <h1 class="display-4">Our Latest Medical Blog Posts</h1>
+            <h5 class="d-inline-block text-primary text-uppercase border-bottom border-5">{{blog_title}}</h5>
+            <h1 class="display-4">{{blog_tagline}}</h1>
         </div>
         <div class="row g-5">
             {% for blog_post in blog_posts %}
@@ -32,25 +33,22 @@
                 <div class="bg-light rounded overflow-hidden">
                     <img class="img-fluid w-100" src="{{ blog_post.img.url }}" alt="">
                     <div class="p-4">
-                        <a class="h3 d-block mb-3" href="">{{ blog_post.title }}</a>
+                        <a class="h3 d-block mb-3" href="{% url 'blogdetailview' post_id=blog_post.id  %}">{{ blog_post.title }}</a>
                         <p class="m-0">{{ blog_post.content }}</p>
                     </div>
                     <div class="d-flex justify-content-between border-top p-4">
                         <div class="d-flex align-items-center">
                             <img class="rounded-circle me-2" src="{% static 'img/user.jpg' %}" width="25" height="25" alt="">
-                            <small>{{ blog_post.author }}</small>
+                            <small>Dr. Shahida Begum Minu</small>
                         </div>
-                        <div class="d-flex align-items-center">
-                            <small class="ms-3"><i class="far fa-eye text-primary me-1"></i>12345</small>
-                            <small class="ms-3"><i class="far fa-comment text-primary me-1"></i>123</small>
-                        </div>
+                       
                     </div>
                 </div>
             </div>
           {% endfor %}
         
           <div class="col-12 text-center">
-            <a class="btn btn-primary py-3 px-5" href="{% url 'blog' %}">View All Blog</a>
+            <a class="btn btn-primary py-3 px-5" href="{% url 'blog' %}">View All Blogs</a>
         </div>
         </div>
     </div>
@@ -68,33 +66,38 @@
                 </div>
                 <div class="col-lg-7">
                     <div class="mb-4">
-                        <h5 class="d-inline-block text-primary text-uppercase border-bottom border-5">About Dr. Shahida Begum Minu</h5>
-                        <h1 class="display-4">Best Medical Care For Yourself and Your Family</h1>
+                        <h5 class="d-inline-block text-primary text-uppercase border-bottom border-5">{{about_title}}</h5>
+                        <h1 class="display-4">{{about_tagline}}</h1>
                     </div>
-                    <p>Dr. Shahida Begum Minu is a Gynecologist in Barisal. Her qualification is MBBS, DGO, MCPS (OBGYN), FCPS (OBGYN). She is a Former Associate Professor in the Department of Gynecology & Obstetrics at Khwaja Yunus Ali Medical College & Hospital. She regularly provides treatment to her patients at Labaid Diagnostic, Barisal. Practicing hour of Dr. Shahida Begum Minu at Labaid Diagnostic, Barisal is 10am to 12pm (Tue & Wed) & 4pm to 9pm (Sat, Sun, Mon, Thu & Fri).</p>
+                    <p>Dr. Shahida Begum Minu is Gynecologist Consultant at Lab Aid Barisal. She holds degrees in medicine from MBBS, DGO, MCPS(OBGYN), and FCPS (OBGYN). She is specially trained in Infertility and Gynecological Cancer Treatment and  registered with the BMDC under registration number 25751. She has 27 years of experience after receiving her MBBS degree and 21 years of experience after receiving her postgraduate degree. She has worked in several notable hospitals in Bangladesh and Saudi Arabia. Her most recent position was as the department head in the Department of Gynecology & Obstetrics at Khwaja Yunus Ali Medical College & Hospital. She treats her patients at Labaid Diagnostic in Barisal from 9:30am to 2:00pm. (Saturday - Thursday)</p>
                     <div class="row g-3 pt-3">
                         <div class="col-sm-3 col-6">
                             <div class="bg-light text-center rounded-circle py-4">
                                 <i class="fa fa-3x fa-user-md text-primary mb-3"></i>
-                                <h6 class="mb-0">Qualified<small class="d-block text-primary">Doctor</small></h6>
+                                <h6 class="mb-0"><small>{{experience}}</small></h6>
                             </div>
                         </div>
                         <div class="col-sm-3 col-6">
                             <div class="bg-light text-center rounded-circle py-4">
-                                <i class="fa fa-3x fa-procedures text-primary mb-3"></i>
-                                <h6 class="mb-0">Emergency<small class="d-block text-primary">Care</small></h6>
+                                <i class="fa fa-3x fa-solid fa-graduation-cap text-primary mb-3"></i>
+                               
+                                <h6 class="mb-0"><small>{{degree1}}</small></h6>
+                                <h6 class="mb-0"><small>{{degree2}}</small></h6>
+                               
                             </div>
                         </div>
                         <div class="col-sm-3 col-6">
                             <div class="bg-light text-center rounded-circle py-4">
-                                <i class="fa fa-3x fa-microscope text-primary mb-3"></i>
-                                <h6 class="mb-0">Operation & <small class="d-block text-primary">Surgery</small></h6>
+                                <i class="fa fa-3x fa-solid fa-graduation-cap text-primary mb-3"></i>
+                            
+                                <h6 class="mb-0"><small>{{degree3}}</small></h6>
+                                <h6 class="mb-0"><small>{{degree4}}</small></h6>
                             </div>
                         </div>
                         <div class="col-sm-3 col-6">
                             <div class="bg-light text-center rounded-circle py-4">
-                                <i class="fa fa-3x fa-ambulance text-primary mb-3"></i>
-                                <h6 class="mb-0">Emergency<small class="d-block text-primary">Ambulance</small></h6>
+                                <i class="fa fa-3x fa-solid fa-graduation-cap text-primary"></i>
+                                <h6 class="mb-0 p-2"> <small>{{special_training}}</small>  </h6>
                             </div>
                         </div>
                     </div>
@@ -109,8 +112,8 @@
     <div class="container-fluid py-5" id="services">
         <div class="container">
             <div class="text-center mx-auto mb-5" style="max-width: 500px;">
-                <h5 class="d-inline-block text-primary text-uppercase border-bottom border-5">Services</h5>
-                <h1 class="display-4">Excellent Medical Services</h1>
+                <h5 class="d-inline-block text-primary text-uppercase border-bottom border-5">{{service_title}}</h5>
+                <h1 class="display-4">{{service_tagline}}</h1>
             </div>
             <div class="row g-5">
 
@@ -119,9 +122,8 @@
                         <div class="service-icon mb-4">
                             <i class="fa fa-2x fa-stethoscope text-white"></i>
                         </div>
-                        <h4 class="mb-3">Outdoor Checkup</h4>
-                        <p class="m-0">Kasd dolor no lorem nonumy sit labore tempor at justo rebum rebum stet, justo elitr dolor amet sit</p>
-                        <a class="btn btn-lg btn-primary rounded-pill" href="">
+                        <h4 class="mb-3">{{service1}}</h4>
+                        <a class="btn btn-lg btn-primary rounded-pill" href="http://127.0.0.1:8000/#appointment">
                             <i class="bi bi-arrow-right"></i>
                         </a>
                     </div>
@@ -132,9 +134,8 @@
                         <div class="service-icon mb-4">
                             <i class="fa fa-2x fa-procedures text-white"></i>
                         </div>
-                        <h4 class="mb-3">Operation & Surgery</h4>
-                        <p class="m-0">Kasd dolor no lorem nonumy sit labore tempor at justo rebum rebum stet, justo elitr dolor amet sit</p>
-                        <a class="btn btn-lg btn-primary rounded-pill" href="">
+                        <h4 class="mb-3">{{service2}}</h4>
+                        <a class="btn btn-lg btn-primary rounded-pill" href="http://127.0.0.1:8000/#appointment">
                             <i class="bi bi-arrow-right"></i>
                         </a>
                     </div>
@@ -148,9 +149,8 @@
                         <div class="service-icon mb-4">
                             <i class="fa fa-2x fa-user-md text-white"></i>
                         </div>
-                        <h4 class="mb-3">Emergency Care</h4>
-                        <p class="m-0">Kasd dolor no lorem nonumy sit labore tempor at justo rebum rebum stet, justo elitr dolor amet sit</p>
-                        <a class="btn btn-lg btn-primary rounded-pill" href="">
+                        <h4 class="mb-3">{{service3}}</h4>
+                         <a class="btn btn-lg btn-primary rounded-pill" href="http://127.0.0.1:8000/#appointment">
                             <i class="bi bi-arrow-right"></i>
                         </a>
                     </div>
@@ -167,34 +167,37 @@
             <div class="row gx-5">
                 <div class="col-lg-6 mb-5 mb-lg-0">
                     <div class="mb-4">
-                        <h5 class="d-inline-block text-primary text-uppercase border-bottom border-5">Chamber</h5>
-                     
+                        <h5 class="d-inline-block text-primary text-uppercase border-bottom border-5">{{chamber_title}}</h5>
                     </div>
                     <div class="col-lg-6 col-md-12">
                         <div class="service-item bg-light rounded d-flex flex-column align-items-center justify-content-center text-center">
                             <div class="service-icon mb-4">
                                 <i class="fa fa-2x fa-stethoscope text-white"></i>
                             </div>
-                            <h4 class="mb-3">Lab Aid</h4>
-                            <p class="m-0">Address: K Jahan Center, House-106, Sadar Road, Barisal - 8200</p>
-                            <a class="btn btn-lg btn-primary rounded-pill" href="">
-                                <i class="bi bi-arrow-right"></i>
-                            </a>
+                            <h4 class="mb-3">{{chamber__name}}</h4>
+                            <p class="m-0">{{chamber_address}}</p>
+                            <p class="m-0">
+                                {{visiting_hour}}
+                            </p>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-6">
+                <div class="col-lg-6 mb-5 mb-lg-0">
                     <div class="mb-4">
-                        <h5 class="d-inline-block text-primary text-uppercase border-bottom border-5">Appointment</h5>
+                        <h5 class="d-inline-block text-primary text-uppercase border-bottom border-5">{{appointment_title}}</h5>
                     </div>
-                    <div class="bg-light text-center rounded p-5 ">
-                        <h1 class="mb-4">Make An Appointment For Your Family</h1>
-                        <form>
-                            <div class="row g-3">
-                                <div class="col-12">
-                                    <a class="btn btn-primary w-100 py-3" href="tel:+8801722201626">Call For Appointment</a>
-                                </div>
-                        </form>
+                    <div class="col-lg-6 col-md-12">
+                        <div class="service-item bg-light rounded d-flex flex-column align-items-center justify-content-center text-center">
+                            <div class="service-icon mb-4">
+                                <i class="fa fa-2x fa-phone text-white"></i>
+                            </div>
+                            <h4 class="mb-3 ">{{appointment_tag}}</h4>
+                            <p>
+                                <a class="btn btn-primary" href="+8801766663305">{{appointment_btn}}</a>
+                            </p>
+                            
+                           
+                        </div>
                     </div>
                 </div>
             </div>
@@ -202,12 +205,7 @@
     </div>
     <!-- Appointment End -->
 
-
-    
-
-
-
-
+<!--Youtube Video -->
 
     
 

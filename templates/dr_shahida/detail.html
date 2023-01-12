@@ -1,4 +1,5 @@
 {% extends 'dr_shahida/base.html' %}
+{% load i18n %}
 {% load static %}
 {% block content %}
 
@@ -10,107 +11,37 @@
         <div class="row g-5">
             <div class="col-lg-8">
                 <!-- Blog Detail Start -->
+                
                 <div class="mb-5">
                     <img class="img-fluid w-100 rounded mb-5" src="{{ blog_post.img.url }}" alt="">
                     <h1 class="mb-4">{{ blog_post.title }}</h1>
                     <p>{{ blog_post.content }}</p>
-                    <div class="d-flex justify-content-between bg-light rounded p-4 mt-4 mb-4">
-                        <div class="d-flex align-items-center">
-                            <img class="rounded-circle me-2" src="{% static 'img/user.jpg' %}" width="40" height="40" alt="">
-                            <span>{{ blog_post.author }}</span>
-                        </div>
-                        <div class="d-flex align-items-center">
-                            <span class="ms-3"><i class="far fa-eye text-primary me-1"></i>12345</span>
-                            <span class="ms-3"><i class="far fa-comment text-primary me-1"></i>123</span>
-                        </div>
+                    <div class="fb-like" data-href="http://127.0.0.1:8000/blog/post/{{blog_post.id}}" data-width="" data-layout="button_count" data-action="like" data-size="large" data-share="true"></div>
                     </div>
-                </div>
                 <!-- Blog Detail End -->
 
                 <!-- Comment List Start -->
                 <div class="mb-5">
-                    <h4 class="d-inline-block text-primary text-uppercase border-bottom border-5 mb-4">3 Comments</h4>
+                    <h4 class="d-inline-block text-primary text-uppercase border-bottom border-5 mb-4">Comments</h4>
                     <div class="d-flex mb-4">
-                        <img src="{% static 'img/user.jpg' %}" class="img-fluid rounded-circle" style="width: 45px; height: 45px;">
-                        <div class="ps-3">
-                            <h6><a href="">John Doe</a> <small><i>01 Jan 2045</i></small></h6>
-                            <p>Diam amet duo labore stet elitr invidunt ea clita ipsum voluptua, tempor labore
-                                accusam ipsum et no at. Kasd diam tempor rebum magna dolores sed eirmod</p>
-                            <button class="btn btn-sm btn-light">Reply</button>
-                        </div>
+                        <div class="fb-comments" data-href="http://127.0.0.1:8000/blog/post/{{blog_post.id}}" data-width="" data-numposts="5"></div>
                     </div>
-                    <div class="d-flex mb-4">
-                        <img src="{% static 'img/user.jpg' %}" class="img-fluid rounded-circle" style="width: 45px; height: 45px;">
-                        <div class="ps-3">
-                            <h6><a href="">John Doe</a> <small><i>01 Jan 2045</i></small></h6>
-                            <p>Diam amet duo labore stet elitr invidunt ea clita ipsum voluptua, tempor labore
-                                accusam ipsum et no at. Kasd diam tempor rebum magna dolores sed eirmod</p>
-                            <button class="btn btn-sm btn-light">Reply</button>
-                        </div>
-                    </div>
-                    <div class="d-flex ms-5 mb-4">
-                        <img src="{% static 'img/user.jpg' %}" class="img-fluid rounded-circle" style="width: 45px; height: 45px;">
-                        <div class="ps-3">
-                            <h6><a href="">John Doe</a> <small><i>01 Jan 2045</i></small></h6>
-                            <p>Diam amet duo labore stet elitr invidunt ea clita ipsum voluptua, tempor labore
-                                accusam ipsum et no at. Kasd diam tempor rebum magna dolores sed eirmod</p>
-                            <button class="btn btn-sm btn-light">Reply</button>
-                        </div>
-                    </div>
+                   
                 </div>
                 <!-- Comment List End -->
 
-                <!-- Comment Form Start -->
-                <div class="bg-light rounded p-5">
-                    <h4 class="d-inline-block text-primary text-uppercase border-bottom border-5 border-white mb-4">Leave a comment</h4>
-                    <form>
-                        <div class="row g-3">
-                            <div class="col-12 col-sm-6">
-                                <input type="text" class="form-control bg-white border-0" placeholder="Your Name" style="height: 55px;">
-                            </div>
-                            <div class="col-12 col-sm-6">
-                                <input type="email" class="form-control bg-white border-0" placeholder="Your Email" style="height: 55px;">
-                            </div>
-                            <div class="col-12">
-                                <input type="text" class="form-control bg-white border-0" placeholder="Website" style="height: 55px;">
-                            </div>
-                            <div class="col-12">
-                                <textarea class="form-control bg-white border-0" rows="5" placeholder="Comment"></textarea>
-                            </div>
-                            <div class="col-12">
-                                <button class="btn btn-primary w-100 py-3" type="submit">Leave Your Comment</button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-                <!-- Comment Form End -->
             </div>
 
             <!-- Sidebar Start -->
             <div class="col-lg-4">
-                <!-- Recent Post Start -->
+                <!-- FB Post Start -->
                 <div class="mb-5">
-                    <h4 class="d-inline-block text-primary text-uppercase border-bottom border-5 mb-4">Recent Post</h4>
-                    
-                    {% for blog_post in blog_posts %}
-                    <div class="d-flex rounded overflow-hidden mb-3">
-                        <img class="img-fluid" src="{{ blog_post.img.url }}" style="width: 100px; height: 100px; object-fit: cover;" alt="">
-                        <a href="{% url 'blogdetailview' post_id=blog_post.id  %}" class="h5 d-flex align-items-center bg-light px-3 mb-0">{{ blog_post.title }}</a>
+                    <h4 class="d-inline-block text-primary text-uppercase border-bottom border-5 mb-4">Recent FB Post</h4>
+                    <div class="text-center mx-auto mb-5" style="max-width: 500px;">
+                        <div class="fb-page" data-href="https://www.facebook.com/Dr.ShahidaBegumMinu/" data-tabs="timeline" data-width="" data-height="1200" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/Dr.ShahidaBegumMinu/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/Dr.ShahidaBegumMinu/">Dr. Shahida Begum Minu; Womens health</a></blockquote></div>
                     </div>
-                    {% endfor %}
-                   
                 </div>
-                <!-- Recent Post End -->
-
-                <!-- Image Start -->
-                <div class="mb-5">
-                    <img src="{{ blog_post.img.url }}" alt="" class="img-fluid rounded">
-                </div>
-                <!-- Image End -->
-
-               
-
-             
+                <!-- FB Post End -->
             </div>
             <!-- Sidebar End -->
         </div>
