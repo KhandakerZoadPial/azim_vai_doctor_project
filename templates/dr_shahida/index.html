@@ -9,7 +9,7 @@
             <div class="row justify-content-start">
                 <div class="col-lg-8 text-center text-lg-start">
                     <h5 class="d-inline-block text-primary text-uppercase border-bottom border-5" style="border-color: rgba(256, 256, 256, .3) !important;">{{chamber_name}}</h5>
-                    <h1 class="display-1 text-white mb-md-4">{{doctor_tagline}}</h1>
+                    <h1 class="display-1 text-white mb-md-4">{{lang.doctor_tagline}}</h1>
                     <div class="pt-2">
                         <a href="#appointment" class="btn btn-light rounded-pill py-md-3 px-md-5 mx-2">Appointment</a>
                         <a href="#services" class="btn btn-outline-light rounded-pill py-md-3 px-md-5 mx-2">Services</a>
@@ -24,8 +24,8 @@
 <div class="container-fluid py-5" id="blog">
     <div class="container">
         <div class="text-center mx-auto mb-5" style="max-width: 500px;">
-            <h5 class="d-inline-block text-primary text-uppercase border-bottom border-5">{{blog_title}}</h5>
-            <h1 class="display-4">{{blog_tagline}}</h1>
+            <h5 class="d-inline-block text-primary text-uppercase border-bottom border-5">{{lang.blog_title}}</h5>
+            <h1 class="display-4">{{lang.blog_tagline}}</h1>
         </div>
         <div class="row g-5">
             {% for blog_post in blog_posts %}
@@ -66,23 +66,23 @@
                 </div>
                 <div class="col-lg-7">
                     <div class="mb-4">
-                        <h5 class="d-inline-block text-primary text-uppercase border-bottom border-5">{{about_title}}</h5>
-                        <h1 class="display-4">{{about_tagline}}</h1>
+                        <h5 class="d-inline-block text-primary text-uppercase border-bottom border-5">{{lang.about_title}}</h5>
+                        <h1 class="display-4">{{lang.about_tagline}}</h1>
                     </div>
-                    <p>Dr. Shahida Begum Minu is Gynecologist Consultant at Lab Aid Barisal. She holds degrees in medicine from MBBS, DGO, MCPS(OBGYN), and FCPS (OBGYN). She is specially trained in Infertility and Gynecological Cancer Treatment and  registered with the BMDC under registration number 25751. She has 27 years of experience after receiving her MBBS degree and 21 years of experience after receiving her postgraduate degree. She has worked in several notable hospitals in Bangladesh and Saudi Arabia. Her most recent position was as the department head in the Department of Gynecology & Obstetrics at Khwaja Yunus Ali Medical College & Hospital. She treats her patients at Labaid Diagnostic in Barisal from 9:30am to 2:00pm. (Saturday - Thursday)</p>
+                    <p>{{lang.about_text}}</p>
                     <div class="row g-3 pt-3">
                         <div class="col-sm-3 col-6">
                             <div class="bg-light text-center rounded-circle py-4">
                                 <i class="fa fa-3x fa-user-md text-primary mb-3"></i>
-                                <h6 class="mb-0"><small>{{experience}}</small></h6>
+                                <h6 class="mb-0"><small>{{lang.experience}}</small></h6>
                             </div>
                         </div>
                         <div class="col-sm-3 col-6">
                             <div class="bg-light text-center rounded-circle py-4">
                                 <i class="fa fa-3x fa-solid fa-graduation-cap text-primary mb-3"></i>
                                
-                                <h6 class="mb-0"><small>{{degree1}}</small></h6>
-                                <h6 class="mb-0"><small>{{degree2}}</small></h6>
+                                <h6 class="mb-0"><small>{{lang.degree1}}</small></h6>
+                                <h6 class="mb-0"><small>{{lang.degree2}}</small></h6>
                                
                             </div>
                         </div>
@@ -90,14 +90,14 @@
                             <div class="bg-light text-center rounded-circle py-4">
                                 <i class="fa fa-3x fa-solid fa-graduation-cap text-primary mb-3"></i>
                             
-                                <h6 class="mb-0"><small>{{degree3}}</small></h6>
-                                <h6 class="mb-0"><small>{{degree4}}</small></h6>
+                                <h6 class="mb-0"><small>{{lang.degree3}}</small></h6>
+                                <h6 class="mb-0"><small>{{lang.degree4}}</small></h6>
                             </div>
                         </div>
                         <div class="col-sm-3 col-6">
                             <div class="bg-light text-center rounded-circle py-4">
                                 <i class="fa fa-3x fa-solid fa-graduation-cap text-primary"></i>
-                                <h6 class="mb-0 p-2"> <small>{{special_training}}</small>  </h6>
+                                <h6 class="mb-0 p-2"> <small>{{lang.special_training}}</small>  </h6>
                             </div>
                         </div>
                     </div>
@@ -112,8 +112,8 @@
     <div class="container-fluid py-5" id="services">
         <div class="container">
             <div class="text-center mx-auto mb-5" style="max-width: 500px;">
-                <h5 class="d-inline-block text-primary text-uppercase border-bottom border-5">{{service_title}}</h5>
-                <h1 class="display-4">{{service_tagline}}</h1>
+                <h5 class="d-inline-block text-primary text-uppercase border-bottom border-5">{{lang.service_title}}</h5>
+                <h1 class="display-4">{{lang.service_tagline}}</h1>
             </div>
             <div class="row g-5">
 
@@ -122,7 +122,7 @@
                         <div class="service-icon mb-4">
                             <i class="fa fa-2x fa-stethoscope text-white"></i>
                         </div>
-                        <h4 class="mb-3">{{service1}}</h4>
+                        <h4 class="mb-3">{{lang.service1}}</h4>
                         <a class="btn btn-lg btn-primary rounded-pill" href="http://127.0.0.1:8000/#appointment">
                             <i class="bi bi-arrow-right"></i>
                         </a>
@@ -134,7 +134,7 @@
                         <div class="service-icon mb-4">
                             <i class="fa fa-2x fa-procedures text-white"></i>
                         </div>
-                        <h4 class="mb-3">{{service2}}</h4>
+                        <h4 class="mb-3">{{lang.service2}}</h4>
                         <a class="btn btn-lg btn-primary rounded-pill" href="http://127.0.0.1:8000/#appointment">
                             <i class="bi bi-arrow-right"></i>
                         </a>
@@ -149,7 +149,7 @@
                         <div class="service-icon mb-4">
                             <i class="fa fa-2x fa-user-md text-white"></i>
                         </div>
-                        <h4 class="mb-3">{{service3}}</h4>
+                        <h4 class="mb-3">{{lang.service3}}</h4>
                          <a class="btn btn-lg btn-primary rounded-pill" href="http://127.0.0.1:8000/#appointment">
                             <i class="bi bi-arrow-right"></i>
                         </a>
@@ -167,33 +167,33 @@
             <div class="row gx-5">
                 <div class="col-lg-6 mb-5 mb-lg-0">
                     <div class="mb-4">
-                        <h5 class="d-inline-block text-primary text-uppercase border-bottom border-5">{{chamber_title}}</h5>
+                        <h5 class="d-inline-block text-primary text-uppercase border-bottom border-5">{{lang.chamber_title}}</h5>
                     </div>
                     <div class="col-lg-6 col-md-12">
                         <div class="service-item bg-light rounded d-flex flex-column align-items-center justify-content-center text-center">
                             <div class="service-icon mb-4">
                                 <i class="fa fa-2x fa-stethoscope text-white"></i>
                             </div>
-                            <h4 class="mb-3">{{chamber__name}}</h4>
-                            <p class="m-0">{{chamber_address}}</p>
+                            <h4 class="mb-3">{{lang.chamber__name}}</h4>
+                            <p class="m-0">{{lang.chamber_address}}</p>
                             <p class="m-0">
-                                {{visiting_hour}}
+                                {{lang.visiting_hour}}
                             </p>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-6 mb-5 mb-lg-0">
                     <div class="mb-4">
-                        <h5 class="d-inline-block text-primary text-uppercase border-bottom border-5">{{appointment_title}}</h5>
+                        <h5 class="d-inline-block text-primary text-uppercase border-bottom border-5">{{lang.appointment_title}}</h5>
                     </div>
                     <div class="col-lg-6 col-md-12">
                         <div class="service-item bg-light rounded d-flex flex-column align-items-center justify-content-center text-center">
                             <div class="service-icon mb-4">
                                 <i class="fa fa-2x fa-phone text-white"></i>
                             </div>
-                            <h4 class="mb-3 ">{{appointment_tag}}</h4>
+                            <h4 class="mb-3 ">{{lang.appointment_tag}}</h4>
                             <p>
-                                <a class="btn btn-primary" href="+8801766663305">{{appointment_btn}}</a>
+                                <a class="btn btn-primary" href="+8801766663305">{{lang.appointment_btn}}</a>
                             </p>
                             
                            

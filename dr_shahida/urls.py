@@ -12,6 +12,7 @@ urlpatterns = [
     path('contact/', views.contact, name='contact'),
     path('blog/', views.blog, name='blog'),
     path('blog/post/<int:post_id>', views.blogdetailview, name='blogdetailview'),
+    path('set_language/<str:ln>', views.set_lang, name='set_lang'),
 
 ]
 
